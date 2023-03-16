@@ -22,9 +22,13 @@
         } else{
             console.log("user : " + user)
             console.log("computer : " + choice[computer])
-            user === "가위" && choice[computer] ==='보'? alert("승리입니다!") :("패배입니다.")
-            user === "바위" && choice[computer] ==='가위'? alert("승리입니다!") :("패배입니다.")
-            user === "보" && choice[computer] ==='바위'? alert("승리입니다!") :("패배입니다.")
+            if(choice.includes(user)){
+                user === "가위" && choice[computer] ==='보'? alert("user : "+user+"\ncomputer : "+choice[computer]+"\n승리입니다!") :("user : "+user+"\ncomputer : "+choice[computer]+"\n패배입니다.")
+                user === "바위" && choice[computer] ==='가위'? alert("user : "+user+"\ncomputer : "+choice[computer]+"\n승리입니다!") :("user : "+user+"\ncomputer : "+choice[computer]+"\n패배입니다.")
+                user === "보" && choice[computer] ==='바위'? alert("user : "+user+"\ncomputer : "+choice[computer]+"\n승리입니다!") :("user : "+user+"\ncomputer : "+choice[computer]+"\n패배입니다.")
+            } else{
+                alert("잘못된 값을 입력하셨습니다.")
+            }
         }
 
     </script>
