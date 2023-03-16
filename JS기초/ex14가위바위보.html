@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 지금부터 가위바위보를 시작하겠습니다.
+
+        //  사용자가 내는 것 . 컴퓨터가 내는 것
+        let choice = ['가위','바위','보']
+        let computer = parseInt(Math.random()*3)
+        let user = prompt('가위바위보를 시작합니다. 무엇을 내시겠습니가?(가위,바위,보) ', '가위')
+
+        if (choice[computer] === user){
+            console.log("user : " + user)
+            console.log("computer : " + choice[computer])
+            alert("무승부입니다.")
+        } else{
+            console.log("user : " + user)
+            console.log("computer : " + choice[computer])
+            user === "가위" && choice[computer] ==='보'? alert("승리입니다!") :("패배입니다.")
+            user === "바위" && choice[computer] ==='가위'? alert("승리입니다!") :("패배입니다.")
+            user === "보" && choice[computer] ==='바위'? alert("승리입니다!") :("패배입니다.")
+        }
+
+    </script>
+
+</body>
+</html>
