@@ -21,6 +21,42 @@
         // 객체 출력
         console.log('object : ' + person);
 
+        // 객체 내 데이터에 접근하는 방법
+        //  case 1 
+        console.log("객체이름.key이름", person.name);
+        // case 2 
+        console.log("객체이름['key이름']", person['name']);
+        // 객체 내 데이터 변경하기
+        person.name = '강슬기'
+        console.log("객체이름['key이름']", person['name']);
+        // 배열안에 객체 넣어보기
+        let orderList = [{
+            name : 'young',
+            stamp : true
+        },{
+            name : 'bo',
+            stamp : false
+        }]
+        console.log('list : ' ,orderList);
+        console.log('name : ' ,orderList[1].name);
+        //  객체안에 배열 넣기
+        let member2 = {
+            name : 'young',
+            hobby : ['노래','춤','코딩']
+        };
+        console.log('취미는 : ', member2.hobby[2]);
+
+        // new 문법 - es6문법 객체 비구조화 할당
+        // 리액트나 새로운 프레임 워크에서 아주 유용
+        let {movie,nature} = {
+            movie : '아메리카노',
+            nature : '카페라떼'
+        }
+
+        // 객체 생성(pokemon)
+        // 3akfl -> name , type, age
+
+        // 출력 제가 가장 좋아하는 포켓몬은 name이고 type 속성이며 age살입니다.
     </script>    
 </body>
 </html>
