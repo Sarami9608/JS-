@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 두개의 수를 더해주는
+        const plus = (num1,num2) => {
+            return num1+num2
+
+        }
+        // 두개의 수를 뺴주는  단 , 큰 값 - 작은 값
+        const minus = (num1,num2) =>{
+            return num1 > num2 ? num1-num2 : num2-num1
+        }
+        const mul = (num1,num2) =>{
+            return num1*num2
+        }
+        const devid = (num1,num2) =>{
+            return num1/num2
+        }
+        // 사용자에게 숫자 입력 두개를 입력받는다.
+
+        let num1 = parseInt(prompt("첫번째 정수를 입력합니다.","0"))
+        let num2 = parseInt(prompt("두번째 수를 입력합니다.","0"))
+
+        // 사용자에게 연산할 기호를 입력받는다.
+        let choice = prompt("연산 기호를 선택하세요.(+,-,*,/)","+")
+
+        // 결과를 팝업창으로 보여준다.
+        let calcul = 0
+        let right = true
+        if (choice === '+'){
+            calcul =plus(num1,num2)
+        }
+        else if (choice === '-'){
+            calcul =minus(num1,num2)
+            
+        }
+        else if (choice === '*'){
+            calcul =mul(num1,num2)
+            
+        }
+        else if (choice === '/'){
+            calcul =devid(num1,num2)
+
+        } else{
+            console.warn('잘못된 입력값입니다.');
+            alert('잘못된 입력값입니다.');
+            right = false
+        }
+        if (right){
+            alert('연산 결과는 '+calcul+'입니다')
+        }
+    </script>
+</body>
+</html>
