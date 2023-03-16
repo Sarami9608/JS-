@@ -13,22 +13,23 @@
         //  사용자가 내는 것 . 컴퓨터가 내는 것
         let choice = ['가위','바위','보']
         let game_on = true
+        let result = '게임오류'
         while (game_on){
 
             let computer = parseInt(Math.random()*3)
             let user = prompt('가위바위보를 시작합니다. 무엇을 내시겠습니가?(가위,바위,보) ', '가위')
-            let resutl = '게임오류'
+            
             if (choice[computer] === user){
                 console.log("user : " + user)
                 console.log("computer : " + choice[computer])
-                reult = '무승부입니다.'
+                result = '무승부'
             } else{
                 console.log("user : " + user)
                 console.log("computer : " + choice[computer])
                 if(choice.includes(user)){
-                    result = user === "가위" && choice[computer] ==='보'? "승리": "패배"
-                    result = user === "바위" && choice[computer] ==='가위'? "승리": "패배"
-                    result = user === "보" && choice[computer] ==='바위'? "승리": "패배"
+                    result = user === "가위" && choice[computer] ==='보'? "승리": "패배";
+                    result = user === "바위" && choice[computer] ==='가위'? "승리": "패배";
+                    result = user === "보" && choice[computer] ==='바위'? "승리": "패배";
                 } else{
                     alert("잘못된 값을 입력하셨습니다.")
                 }
