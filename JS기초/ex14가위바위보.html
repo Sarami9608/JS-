@@ -17,22 +17,23 @@
 
             let computer = parseInt(Math.random()*3)
             let user = prompt('가위바위보를 시작합니다. 무엇을 내시겠습니가?(가위,바위,보) ', '가위')
-    
+            let resutl = '게임오류'
             if (choice[computer] === user){
                 console.log("user : " + user)
                 console.log("computer : " + choice[computer])
-                alert("무승부입니다.")
+                reult = '무승부입니다.'
             } else{
                 console.log("user : " + user)
                 console.log("computer : " + choice[computer])
                 if(choice.includes(user)){
-                    user === "가위" && choice[computer] ==='보'? alert("user : "+user+"\ncomputer : "+choice[computer]+"\n승리입니다!") :("user : "+user+"\ncomputer : "+choice[computer]+"\n패배입니다.")
-                    user === "바위" && choice[computer] ==='가위'? alert("user : "+user+"\ncomputer : "+choice[computer]+"\n승리입니다!") :("user : "+user+"\ncomputer : "+choice[computer]+"\n패배입니다.")
-                    user === "보" && choice[computer] ==='바위'? alert("user : "+user+"\ncomputer : "+choice[computer]+"\n승리입니다!") :("user : "+user+"\ncomputer : "+choice[computer]+"\n패배입니다.")
+                    result = user === "가위" && choice[computer] ==='보'? "승리": "패배"
+                    result = user === "바위" && choice[computer] ==='가위'? "승리": "패배"
+                    result = user === "보" && choice[computer] ==='바위'? "승리": "패배"
                 } else{
                     alert("잘못된 값을 입력하셨습니다.")
                 }
             }
+            alert("user : "+user+"\ncomputer : "+choice[computer]+"\n"+result+"입니다.")
             game_on = confirm("게임을 계속하시겠습니까?")
         }
 
