@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //javascript 작성
+        // 1.출력
+
+        // 1-1) console 창에 출력하기
+        console.log('Hello World!');
+        console.error('Error!!');
+        console.warn('WARING!');
+
+        // 1-2) 팝업창에 출력하기
+        // alert('POP!')
+
+        // 1-3) 문서에 출력하기
+        document.write('문서에 출력!')// 다른 문법이 존재
+
+
+
+        // 3) 변수 선언 : 모든 타입을 var로 지정
+        // 2. 입력
+        // 2-1) 확인 질문 : confirm ==> 확인 or 취소 return type boolean
+        var result = confirm('저녁 먹음?');
+        console.log(result)
+
+        // 2-2) 입력 확인문 : prompt => 사용자가 입력 가능 return type string
+        // prompt("질문제시(필수 사항)","default값 제시(선택 사항)")
+        var str = prompt('어제 저녁 뭐드셨나요?','소고기');
+        console.log("저녁에 ",str," 먹었습니다.")
+
+
+
+
+
+    </script>
+</body>
+</html>

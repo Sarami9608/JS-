@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS 연습 중</h1>
+    <script>
+        // 오류 발생 x 
+        // why?? --> 호이스팅 현상????? --> 웹 엔진 자체에서 일어나는 현상
+        // JavaScript에서 호이스팅(hoisting)이란, 인터프리터가 변수와 함수의 메모리 공간을 선언 전에 미리 할당하는 것을 의미합니다.
+        //  var 로 선언한 변수의 경우 호이스팅 시 undefined 로 변수를 초기화합니다.
+        // 절차적 x  코드를 전체적으로 파악--> 메모리에 변수 , 함수들을 미리 저장
+        console.log("script 위쪽 : "  + color)
+        //  변수 : 데이터를 담을 공간
+
+        // (1) var
+        var color = 'black' // 선언
+        console.log('var : ' + color)
+        var color = 'pink' // 재선언이 가능
+        console.log('var : ' + color)
+        color = 'yellow' // 재할당도 가능
+        console.log('var : ' + color)
+
+        // 2015 ES6 이후 등장한 새로운 변수
+        // let, const
+
+
+        //let의 호이스팅 현상?  --- let도 호이스팅 현상이 일어남
+        // TDZ라는 공간에 메모리르 저장해두고 선언 이벤트가 발생하기 전까지 접근 불가능
+        // TDZ = temporal death zone
+        console.log("let : ", color2)
+        //(2) let
+        let color2 = 'black' // 선언
+        console.log('let : ', color2)
+        // let color2 = 'pink'  재선언 불가능 
+        console.log('let : ', color2)
+        color2 = 'pink' //재할당 가능
+        console.log('let : ', color2)
+        
+        // (3) const 
+        const color3 = 'black' // 선언 가능
+        console.log('const : ', color3)
+        // const color3 = 'pink' // 재선언 불가능
+        // color3 = 'pink' // 재할당 불가능
+    </script>
+</html>

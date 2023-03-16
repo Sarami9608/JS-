@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let answer = confirm('코로나 검사함?')
+        if(answer == true){
+            answerStr = prompt('양성/음성 : ','음성')
+            if (answerStr ==='양성'){
+                alert('집에서 5일간 격리하세요.')
+                // 
+                document.getElementsByTagName('body')[0].style.backgroundColor = 'purple'
+                
+            }else{
+                document.getElementsByTagName('body')[0].style.backgroundColor = 'blueviolet'
+                alert('안녕히 가세요')  
+            }
+        } else{
+          alert('검사하고 다시 오셈')  
+        }
+
+
+    </script>
+    
+</body>
+</html>
