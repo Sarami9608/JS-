@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        👍<span id="number">0</span>
+     </p>
+     <button id="like">좋아요</button>
+     <button id="hate">싫어요</button>
+
+     <script>
+        let like = document.getElementById('like')
+        let hate = document.getElementById('hate')
+
+        like.addEventListener('click',()=>{
+            let number = document.getElementById('number')
+            number.innerText = parseInt(number.innerText) + 1;
+        })
+
+        hate.addEventListener('click',()=>{
+            let number = document.getElementById('number')
+            if( number.innerText !='0'){
+                number.innerText = parseInt(number.innerText) - 1;
+            }
+        })
+
+     </script>
+</body>
+</html>

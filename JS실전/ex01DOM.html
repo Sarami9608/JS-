@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- DOM : document object model 
+        DOM 객체는 HTML 문서 내의 요소들을 전부 단일 객체로 하나하나 쪼개서 다루는 개념
+        
+        ex) <h1 id="h1Tag">안녕하세요</h1>
+        => 통으로 존재하면서 바ㅜ꺼서 설정할 수가 없다.
+        => h1(태그), id(속성) h1Tag(속성에 대한 값), 안녕하세요(컨텐츠) = 전부 쪼개는 것
+        => 쪼개주는 이유는 각각의 단일 요소에 접근해서 JS문법을 사용하기 위해서
+    -->
+    <!-- 모든 문서의 최사위 객체는 documnet 객체다. -->
+    <h1 id="h1Tag">안녕하세요</h1>
+    <p class="num">p태그1</p>
+    <p class="num">p태그2</p>
+
+    <script>
+        // step 1 . id가 h1Tag인 요솔ㄹ 가지고 온다.
+        // (1) HTML 문서에 접근 : document
+        // (2) 가지고 오다. get
+        // (3) 요소를 : Element
+        // (4) ~를 통해서 : by
+
+        let h1Tag =document.getElementById('h1Tag')
+        console.log('내가 가져온 요소 : ' , h1Tag);
+
+        // step2 내가 가지고 온 요소에서 컨텐츠만 추출
+        // 안에 있는 (inner) 텍스트만 (Text) => .innerText
+        console.log('inner Text : ', h1Tag.innerText);
+
+        // step 3 내가 가져온 요소에서 컨텐츠를 수정해보자.
+        // innerText = '값' : 단순 텍스트만 수정?
+        // h1Tag.innerText = '<a href="#">배고프다.</a>';
+        // innerHTML = '값' : HTML 요소를 포함해서 수정이 가능하다.
+        h1Tag.innerHTML = '<a href="#">배고프다.</a>';
+
+        // 클래스를 통해 요소를 가져와보자.
+        //  step 1 class가 num인 요소를 가지고 오다.
+        let pTag = document.getElementsByClassName('num')
+        console.log('클래스를 통해 가져온 요소 : ', pTag[0]);
+        // step 2 값을 수정해보자.
+        pTag[0].innerText = '수정된 p태그'
+
+        for (let i = 0 ; i < pTag.length ; i++){
+            console.log(pTag[i].innerText);
+        }
+
+
+    </script>
+</body>
+</html>
