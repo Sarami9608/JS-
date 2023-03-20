@@ -10,8 +10,50 @@
     <input type="text" id="inputText">
     <button id="inputBtn">input 태그 값 가져오기</button>
 
-    <img src="" id="imgTag" width="200px">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdapV99zB_CfpAYs9B3zs-Ilw8exERpCevjw&usqp=CAU" id="imgTag" width="200px">
     <button id="getImgBtn">이미지 값 불러오기</button>
     <button id="setImgBtn">이미지 변경하기</button>
+
+    <script>
+        // https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSZkG_cy2ejpC4fLDN7BHGC1U-bcXGTiW5DA&usqp=CAU
+
+        //1. input 태그 내에 사용자가 입력한 값을 가져와보자.
+        //  input 버튼 이벤트 걸어주기
+        document.getElementById("inputBtn").addEventListener('click',()=>{
+            console.log('click');
+
+            // input 태그 안에 적힌 값을 가져오기
+            // innerText로는 input 태그 안에 적힌 값을 못가져온다.
+            // why? -> input태그 안에 입력한 글자를 가져오려면 .value 사용
+            let inputTag = document.getElementById('inputText')
+            console.log('input : ', inputTag.value);
+
+            // 안에 있는 값을 초기ㅗ하
+            inputTag.value = ''
+        })
+
+        // img 태그에 접근해서 속성을 수정
+        document.getElementById('getImgBtn').addEventListener('click', ()=>{
+            // 현재 imgTag의 속성값을 가져오기
+            let imgTag = document.getElementById('imgTag')
+            // case 1   .getAttribute('속성이름')
+            console.log('현재 img : ',imgTag.getAttribute('src'));
+            // case 2   .속성이름
+            console.log('현재 img : ',imgTag.src);
+
+        })
+
+        // img태그에 접근해서 속성을 수정
+        document.getElementById('setImgBtn').addEventListener('click',()=>{
+            let imgTag = document.getElementById('imgTag')
+
+            // case 1  setAttribute('속성이름','바꿀값')
+            // imgTag.setAttribute('src','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSZkG_cy2ejpC4fLDN7BHGC1U-bcXGTiW5DA&usqp=CAU')
+
+            //case 2 속성이름 = '바꿀값'
+
+            imgTag.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSZkG_cy2ejpC4fLDN7BHGC1U-bcXGTiW5DA&usqp=CAU'
+        })
+    </script>
 </body>
 </html>
