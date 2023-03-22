@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 230322 -->
+    <input type="text" id="name">
+    <button id="btn">변경!</button>
+    <img
+    src="#"
+    width="200px"
+    id = 'imgTag'>
+    <script>
+        // button 객체를 가져온다.
+        let src = document.getElementById('btn').addEventListener('click',()=>{
+            let text = document.getElementById('name');
+            console.log(text.value);
+            
+            let urlsuji = 'https://img.allurekorea.com/allure/2022/11/style_636df79253f91-1136x1200.png'
+            let urlIU = 'https://cdn.mhns.co.kr/news/photo/201710/80596_134727_1149.png'
+            let img = document.getElementById('imgTag');
+            if (text.value ==='아이유'){
+                imgTag.src = urlIU
+            }
+            else if (text.value === '수지'){
+                imgTag.src = urlsuji
+            }
+            else {
+                imgTag.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSZkG_cy2ejpC4fLDN7BHGC1U-bcXGTiW5DA&usqp=CAU'
+            }
+            text.value = ''
+        })
+
+        
+    </script>
+</body>
+</html>
