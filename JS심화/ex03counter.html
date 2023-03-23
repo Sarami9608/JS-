@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./JS/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <span id="num">0</span>
+    <br>
+    <button id="plus">+1</button>
+    <button id="minus">-1</button>
+    <script>
+        $('#plus').click(()=>{
+            let num = $('#num')
+            now = parseInt(num.text())
+            num.text(now+1)
+        })
+        $('#minus').click(()=>{
+            let num = $('#num')
+            now = parseInt(num.text());
+            if(now > 0 ){
+                num.text(now-1) 
+            } 
+        })
+    </script>
+</body>
+</html>

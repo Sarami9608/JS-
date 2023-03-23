@@ -20,7 +20,7 @@ function moveRight(){
         now -= 50;
     }
     img.style.right = String(now) + 'px'
-    
+     
 }
 const jump = ()=>{
     console.log('jump function')

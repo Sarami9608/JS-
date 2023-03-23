@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./JS/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <img id="pic" width="200px" src="https://newsimg.sedaily.com/2019/09/04/1VO45O5N53_3.jpg" />
+    <p id="abc">여러분 안녕하세요~ </p>
+    <input type="text" id="inputTxt" />
+    <button id="btn">내용 변경!</button>
+    <br>
+    <button id="style-btn">스타일 변경</button>
+    <button id="pic-btn">사진 변경</button>
+    <script>
+        // jQuery 문법의 기호 : $
+        
+        // 내가 원하는 HTML 요소를 JS에서 활용할 수 있도록
+        // 여러분 안녕하세요~ 라는 글을 가져온다.
+        // v-JS
+        // document.getElementById('abc')
+        // jQuery ; $('선택자')
+        let element =$('#abc')
+        console.log(element);
+
+        //  내가 원하는 요소안에 내용만 가져오기
+        // v-JS : .innerText
+        // jQuery : .text()
+        console.log(element.text());
+        // 내가 원하는 요소 수정해보기
+        // v-JS : innerText = 값
+        // jQeury : .text(값)
+        element.text('오늘은 비가 왔습니다.')
+        console.log(element.text());
+        // 태그까지 포함해서 수정하기
+        // v-JS : innerHTML = rkqt
+        // jQuery : .html(값)
+        element.html('<h1>오늘 하루 기분이?</h1>')
+
+        // 버튼 이벤트
+        // v-JS: .addEventListener('click',()=>{})
+        // jQuery : .click(()=>{}) // id 선택자 #
+        $('#btn').click(()=>{
+            console.log('btn click')
+            //input 입력값으로 텍스트를 설정
+            //input 가져오기
+            //v-JS : .value
+            //jQuery : .val()
+            let val = $('#inputTxt')
+            console.log('input value : ' ,val.val())
+            // 텍스트 값을 설정
+            element.text(val.val())
+
+            //  input value 초기화
+            // val.val('')
+            // val.focus()
+
+            // 값 누적
+            element.append(val.val())
+        })
+        // 스타일 변경
+        // v-JS : .style.속성 = 값
+        // .jQuery : .css('속성',값)
+        $('#style-btn').click(()=>{
+            element.css('color','violet')
+        })
+
+        // 속성 변경
+        // v-JS : .속성/ setAttribute~
+        // jQuery : .attr()
+        $('#pic-btn').click(()=>{
+            $('#pic').attr('src','https://thumb.mt.co.kr/06/2020/10/2020101317102020309_1.jpg')
+        })
+    </script>
+</body>
+</html>
