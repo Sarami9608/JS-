@@ -15,16 +15,32 @@
     <script>
         $('#plus').click(()=>{
             let num = $('#num')
-            now = parseInt(num.text())
+            now = Number(num.text())
+            num.text(now+1)
+        })
+        $('#plus').click(()=>{
+            let num = $('#num')
+            now = Number(num.text())
             num.text(now+1)
         })
         $('#minus').click(()=>{
             let num = $('#num')
-            now = parseInt(num.text());
+            now = Number(num.text());
             if(now > 0 ){
                 num.text(now-1) 
             } 
         })
+        // jQuery는 선택자 지정에 자유롭다.
+        // 계층선택자도 자유롭게 선택 가능 $('p>.abc')
+
+        // document.querySelector('선택자기호')
+        document.querySelector('#plus').addEventListener('click',()=>{
+            console.log('querySelector');
+        })
+        // 만약 querySelector 를 통해 여러 요소를 가져오고 싶다면 (태그,클래스)
+        // qeurySelectorAll(선택자)
+        let btnList = document.qeurySelectorAll('button')
+        console.log(btnList);
     </script>
 </body>
 </html>

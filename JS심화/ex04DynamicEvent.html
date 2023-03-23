@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./JS/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <button id="addBtn">버튼 추가하기</button>
+    <div id="container"></div>
+    <script>
+        $('#addBtn').click(()=>{
+            $('#container').html('<button id="newBtn">새로운 버튼</button>')
+        })
+        // // 동작 x
+        // $('#newBtn').click(()=>{
+        //     console.log('new');
+        //     // $('#container').html('<button id="newBtn2">새로운 버튼2</button>')
+        // })
+        //  동적이벤트 바인딩
+
+        // .click() : 최초의 페이지를 로딩 할 떄 , 선언되었던 요소에 이벤트 바인딩 -> 그 이후로는 더이상 동적으로 바인딩x
+
+        // 동적으로 추가된 요소에 이벤트
+        //  on --> 해당 이벤트가 발생했을때
+        //  최초의 화면과 달라진 요소에 이벤트를 걸어야할 떄  .on('click') 
+        // 최초의 화면에 존재하는 요소에 이벤트를 걸 때        .click()
+        $(document).on('click','#newBtn',()=>{
+            console.log('new')
+        })
+    </script>
+</body>
+</html>
