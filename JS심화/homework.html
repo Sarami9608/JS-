@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./JS/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <button id="like">좋아요</button><span id="likeText">0</span>
+    <br>
+    <input type="text" id="inputTag"><button class='writeCom'>댓글작성</button>
+    <br>
+    <div id="com">
+        <p>첫댓글
+            <button class='removeCom'>삭제</button>
+        </p>
+    </div>  
+    <script>
+        $('#like').click(()=>{
+            let now = Number($('#likeText').text())
+            if(now == 1){
+                $('#likeText').text(0)
+                $('#like').text('좋아요')
+            }else{
+                $('#likeText').text(1)
+                $('#like').text('좋아요 취소')
+            }
+        })
+        $('.writeCom').click(()=>{
+            let inputText =$('#inputTag').val()
+            $('#inputTag').val('')
+            $('#com').append(`<p>${inputText}<button class='removeCom'>삭제</button></p>`)
+        })
+        $(document).on('click','.removeCom',function(){
+            $(this).parent().remove()
+        })
+    </script>
+</body>
+</html>
