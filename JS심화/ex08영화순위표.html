@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./JS/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <button onclick="getData()">요청</button>
+    <div id="container">
+        <table>
+            <tr>
+                <th>순위</th>
+                <th>영화제목</th>
+                <th>개봉일자</th>
+            </tr>
+        </table>
+    </div>
+    <script>
+        let url =   'https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=273fb785061d48b9c6dffe0dc817a667&targetDt=20230301'
+
+        const getData = ()=>{
+            console.log('getData Function')
+            $.ajax({
+                url : url, // 요청 서버 경로 (외부주소 , 내부 파일)
+                type : 'get', //요청 방식 (get/post)
+                // 만약 보낼 데이터가 존재하다면 
+                // data : {'userID' : '값','uesrPW' : '값'}
+                success : (res)=>{
+                    //통신에 성공한 경우
+                    // console.log('받아온 데이터 : ', res.boxOfficeResult.weeklyBoxOfficeList)
+                    let list = res.boxOfficeResult.weeklyBoxOfficeList;
+                    let string = ''
+                    for(let i = 0 ; i < list.length ; i++){
+                        let rank = i+1
+                        let name = list[i]['movieNm']
+                        let date = list[i]['openDt']
+                        // $('#rank').append(
+                        //     `<tr><td>${rank}</td><td>${name}</td><td>${date}</td></tr>`
+                        //     )
+                            
+                            // DOM version
+                        string += `<tr><td>${rank}</td><td>${name}</td><td>${date}</td></tr>`
+
+                    }
+                    let table = document.querySelector('#container table') 
+                    console.log(table)
+                    table.innerHTML = table.innerHTML +string
+
+                },
+                error : ()=>{
+                    //통신에 실패한 경우
+                    alert('통신에 실패함. 쯧')
+                }
+            })
+        }
+    </script>
+</body>
+</html>
